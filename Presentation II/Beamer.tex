@@ -1,0 +1,265 @@
+\documentclass[10pt]{beamer}
+\usetheme{jambro}
+\graphicspath{{./graphics/}}
+
+% Authors/institutes/date/etc
+%--------------------------------
+\title[]{Way Down in the Hole: Adaptation to Long-Term Water Loss in Rural India}
+\author[{\scriptsize Roy Kisluk}]{\scriptsize Roy Kisluk}
+\institute[{\scriptsize Under the supervision of Dr.\ Tomer Ifergane}]{\scriptsize Under the supervision of Dr.\ Tomer Ifergane}
+\date{\scriptsize \today}
+
+\begin{document}
+%===================================================
+
+\begin{frame}[plain]
+	\titlepage{
+		\begin{center}
+			\begin{minipage}{0.8\textwidth}
+				\centering
+				\color{title!80}{\scriptsize Tel Aviv University\\
+					Eitan Berglas School of Economics\\
+				}
+			\end{minipage}
+		\end{center}}
+\end{frame}
+
+
+%===================================================
+\section{Introduction}
+\begin{frame}
+	{Introduction}
+	\begin{itemize}
+		\item Israeli Arabs and ultra-Orthodox Jews have distinct consumption patterns
+		\item Why is it important?
+		      \begin{itemize}
+			      \item Price increases may affect them differently \(\Rightarrow\)
+			      \item Some groups may be more vulnerable to inflation of certain goods and services
+		      \end{itemize}
+		\item Methodology:
+		      \begin{itemize}
+			      \item Use CES and CPI data to estimate group expenditure shares
+			      \item Estimate price index for each group
+		      \end{itemize}
+		\item Does inflation impact different demographic groups in Israel unequally?
+	\end{itemize}
+\end{frame}
+%===================================================
+\begin{frame}
+	{Data and Methodology}
+	\begin{itemize}
+		\item Using household-level and individual level data from the Israeli Central Bureau of Statistics, we group individuals into three groups:
+		      \begin{itemize}
+			      \item Ultra-Orthodox
+			      \item Israeli Arabs
+			      \item Jews (excluding ultra-Orthodox)
+		      \end{itemize}
+		\item For each of these groups, we estimate the expenditure share of each good in their consumption basket
+		\item Using prices data, we estimate the price index for each group
+		\item We then compare the price indexes of these groups, along with the overall price index
+		\item In progress:
+	\end{itemize}
+\end{frame}
+%===================================================
+\begin{frame}
+	{Results}
+	\begin{itemize}
+		\item Different inflation for Arabs, Jews, and ultra-Orthodox
+		\item These differences are driven by differences in consumption patterns
+		\item In fact, they are more general, and can be grouped into food, goods, and services
+		\item Potential results
+	\end{itemize}
+\end{frame}
+%===================================================
+
+\begin{frame}
+	{Literature Review}
+	\begin{itemize}
+		\item Innovation benefits high-income consumers more; inflation heterogeneity across income.
+		      \begin{itemize}
+			      \item Jaravel (2021), Jaravel (2016)
+		      \end{itemize}
+
+		\item Trade shifts relative prices, reallocates labor across sectors.
+		      \begin{itemize}
+			      \item Cravino, Levchenko, and Rojas (2022)
+		      \end{itemize}
+
+		\item Income-driven demand + sectoral productivity explain service sector rise.
+		      \begin{itemize}
+			      \item Comin, Lashkari, and Mestieri (2022)
+		      \end{itemize}
+
+		\item Preferences, technology, prices explain structural transformation.
+		      \begin{itemize}
+			      \item Herrendorf, Rogerson, and Valentinyi (2013)
+		      \end{itemize}
+
+		\item Non-homothetic preferences explain sectoral shifts in spending and labor.
+		      \begin{itemize}
+			      \item Boppart (2014)
+		      \end{itemize}
+
+		\item Rising income shifts spending from goods to services.
+		      \begin{itemize}
+			      \item Aguiar and Bils (2015)
+		      \end{itemize}
+	\end{itemize}
+\end{frame}
+
+%===================================================
+\begin{frame}
+	{Overview}
+	\begin{enumerate}
+		\item Background
+		\item Data
+		\item Empirical Strategy
+		\item Results
+		\item Conclusion
+		\item Thesis
+	\end{enumerate}
+\end{frame}
+
+%===================================================
+\section{Background}
+\begin{frame}{Background}
+	\begin{itemize}
+		\item Israel exhibits significant consumption inequality among its main population groups: Arabs, Jews, and Ultra-Orthodox Jews.
+		\item Such differences in consumption baskets lead to group-specific inflation experiences, resulting in inequality in unequal cost-of-living trends.
+		\item Recent trends highlight persistent economic disparities; ultra-Orthodox and Arab households have lower average incomes compared to the general Jewish population.
+		\item Therefore, they face higher poverty risks and financial vulnerabilities.
+	\end{itemize}
+\end{frame}
+%===================================================
+\begin{frame}{Background}
+	\begin{itemize}
+		\item In addition, demographic differences are central: Arabs and Ultra-Orthodox Jews have significantly higher natural population growth rates than non-Ultra-Orthodox Jews.
+		\item Arabs and Ultra-orthodox consume more food and goods, and less services compared to the general Jewish population.
+		\item Over time, these shifts are likely to reshape the structure of demand in the Israeli economy—placing growing weight on goods and food sectors relative to services.
+		\item Understanding these trends is critical for anticipating structural transformation and assessing policy impacts on inequality and inflation.
+		\item These patterns have significant implications for welfare, monetary policy transmission, and long-term economic development.
+	\end{itemize}
+\end{frame}
+%===================================================
+\section{Data}
+\begin{frame}{Data}
+	\begin{itemize}
+		\item    Consumer Expenditure Survey (CES) - 2014-2022
+		      \begin{itemize}
+			      \item Public use files (PUF) provided by the CBS
+			      \item Between 900 and 1400 products per year
+			      \item Between 5000 and 9000 households per year
+			      \item Indicators of the CBS to identify Arab and ultra-Orthodox households
+			      \item Age group of the household head, income decile, number of household memebers, number of household earners, region of residence
+			      \item Expenditure data (from the consumption survey): total expenditure and quantities, per product, per household.
+		      \end{itemize}
+
+		\item Consumer Price Index (CPI) - 2014-2022
+		      \begin{itemize}
+			      \item Public use files (PUF) provided by the Bank of Israel
+			      \item Monthly prices for 38 categories of goods and services
+			      \item Weights per category for verification and comparison
+		      \end{itemize}
+	\end{itemize}
+\end{frame}
+%===================================================
+\section{Empirical Strategy}
+\begin{frame}{Laspeyres Index}
+	\[
+		I_{t}=\frac{\sum_{j\in L}{\frac{P_{tj}}{P_{oj}}(P_{oj}Q_{oj})}}{\sum_{j\in L}P_{oj}Q_{oj}} \times 100
+	\]
+	Alternatively,
+	\[
+		I_{t}=\sum_{j\in L}W_{oj}I_{tj}\times 100
+	\]
+	\begin{itemize}
+
+
+		\item Where: \( I_{tj} = \frac{P_{tj}}{P_{oj}}, \quad W_{oj} = \frac{P_{oj}Q_{oj}}{\sum_{j \in L} P_{oj}Q_{oj}} \)
+		\item \( I_{t} \) - Index for period \( t \)
+		\item \( Q_{oj} \) - Quantity of the good or service in the base period
+		\item \( P_{oj} \) - Price of the good or service in the base period
+		\item \( P_{tj} \) - Price of the good or service in period \( t \)
+		\item \( L \) - The set of all goods and services in the index basket
+	\end{itemize}
+\end{frame}
+%===================================================
+
+
+\begin{frame}{Structural Model}
+	The following utility function belongs to a subclass of Price Independent Generalized Linearity (PIGL) preferences (Muellbauer, 1975, 1976; Boppart, 2014; Cravino, Levchenko, and Rojas, 2022). \\
+	The indirect utility of household \(h\) is:
+
+	\[V^{h}\left(P_{t}^{s},P_{t}^{g},e_{t}^{h}\right)=\frac{1}{\epsilon}\left[\frac{e_{t}^{h}}{P_{t}^{s}}\right]^{\epsilon}-\frac{\nu_{t}^{h}}{\gamma}\left[\frac{P_{t}^{g}}{P_{t}^{s}}\right]^{\gamma}-\frac{1}{\epsilon}+\frac{\nu_{t}^{h}}{\gamma},\]
+	Where:
+	\begin{itemize}
+		\item \(P_{t}^s\) and \(P^g_{t}\) are the prices of goods and services.
+		\item \(0 \leq \varepsilon \leq \gamma \leq 1\) are parameters
+		\item \(\nu_{t}^h \geq 0\) denotes household-specific age shifters
+		      \begin{itemize}
+			      \item \(\nu_{t}^h=\nu_{t}\mu^a\mu_{t}^h\), where \(\frac{1}{N_{t}}\sum_{h}\mu_{t}^h=1\)
+			      \item The household-specific taste shifter has an aggregate component \( \nu_{t} \), an age-specific component \( \mu^a \), and an idiosyncratic component \( \mu_{t}^h \).
+		      \end{itemize}
+		\item \(e^t\) denotes expenditure.
+
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Structural Model}
+	\[
+		\omega_t^{g, h} \equiv \frac{e_t^{g, h}}{e_t^h} = \nu_t^h
+		\left[ \frac{P_t^s}{e_t^h} \right]^{\epsilon}
+		\left[ \frac{P_t^{g}}{P_t^s} \right]^{\gamma},
+	\]
+\end{frame}
+
+\begin{frame}{Structural Model}
+	\[
+		\Omega_t^g \equiv \frac{\sum_h e_t^{g,h}}{\sum_h e_t^h} =
+		\left[ \frac{P_t^s}{e_t} \right]^c
+		\left[ \frac{P_t^g}{P_t^s} \right]^\gamma
+		\frac{1}{N_t} \sum_h \nu_t^h
+		\left[ \frac{e_t^{h}}{e_t} \right]^{1 - c},
+	\]
+\end{frame}
+
+
+\begin{frame}{Structural Model}
+	\[
+		\Omega_t^g =
+		\left[ \frac{P_t^s}{e_t} \right]^c
+		\left[ \frac{P_t^g}{P_t^s} \right]^\gamma
+		\bar{\mu}_t \phi_t \nu_t.
+	\]
+\end{frame}
+
+\begin{frame}{Structural Model}
+	\[
+		\ln \alpha_i^{y,h} = \beta_0 + \beta_1 \ln e_i^h + D^a + \delta_{r,t} + e_i^h,
+	\]
+\end{frame}
+
+\begin{frame}{Structural Model}
+	Price elasticity \(\gamma\) is estimated using the regression:
+
+	\[
+		\ln\Omega_{t}^{g}=b_{1}\ln P_{t}^{g}+b_{2}\ln P_{t}^{s}+b_{3}X_{t}+\ln\nu_{t},
+	\]
+	\begin{itemize}
+		\item \(\Omega_{t}^g\) is the aggregate expenditure share on goods.
+		\item \(X_{t}\equiv\ln\,(e_{t}^{-\epsilon}\bar{\mu}_{t}\phi_{t})\), where:
+		      \begin{itemize}
+			      \item \(e_{t}=\frac{1}{N_{t}}\sum_{h}e^h_{t}\) denotes average expenditures per household.
+			      \item \({{\bar{\mu}_{t}\equiv\sum_{a}s_{t}^{a}\mu^{a}}}\) is the weighted average of the age-specific taste shifters, with weights given by expenditure shares \(s_{t}^a=\frac{e^a_{t}N_{t}^a}{e_{t}N_{t}}\), where \(a\) denotes that the variable is grouped by age group; \(\sum_{a}N_{t}^a=N_{t}\) is the total number of households in the economy.
+			      \item \({{{\phi_{t}\equiv{\frac{1}{N_{t}}}\sum_{h}^{N_{t}}{\frac{\mu^{a}}{\bar{\mu}_{t}}}\left[{\frac{e_{t}^{h}}{e_{t}}}\right]}^{1-\epsilon}}}\) is a measure of the inequality in the economy, weighted by household preferences.
+		      \end{itemize}
+		\item \(b_{1}=\gamma\) (price elasticity).
+		\item The other coefficients satisfy the restrictions \(b_{3} = 1\), and \(b_{2} = \varepsilon-b_{1}\).
+		\item \(\nu_{t}\) is the aggregate taste shifter.
+	\end{itemize}
+
+\end{frame}
+
+\end{document}
+
+
